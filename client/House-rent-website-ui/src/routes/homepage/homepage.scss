@@ -1,0 +1,78 @@
+
+@use "../../responsive.scss" as *;
+
+
+.homepage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include desktop{
+        padding-right: 50px;
+      }
+
+      @include tab{
+        padding: 0;
+      }
+
+      @include phone{
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 60px;
+
+        @include desktop {
+          font-size: 45px;
+        }
+      }
+      
+      .description{
+        font-size: 25px;
+        font-family: sans-serif;
+      }
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+
+        @include phone {
+          display: none;
+        }
+
+        
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 2;
+    background-color: #ffc9b0;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include tab {
+      display: none;
+    }
+
+    img {
+      width: 115%;
+      position: absolute;
+      right: 0;
+
+      @include desktop {
+        width: 105%;
+      }
+    }
+  }
+}
